@@ -20,6 +20,7 @@ public class PlayerWeapon : MonoBehaviour
         ProcessFiring();
         MoveCrossHair();
         MoveTargetPoint();
+        AimLasers();
     }
 
     public void OnFire(InputValue value)
@@ -41,8 +42,19 @@ public class PlayerWeapon : MonoBehaviour
         _crosshair.position = Input.mousePosition;
     }
 
-    private void MoveTargetPoint() {
+    private void MoveTargetPoint()
+    {
         Vector3 targetPosition = new(Input.mousePosition.x, Input.mousePosition.y, _targetDistance);
         _targetPoint.position = Camera.main.ScreenToWorldPoint(targetPosition);
+    }
+
+    private void AimLasers()
+    {
+        foreach (GameObject laser in _lasers)
+        {
+            Vector3 fireDirection = _targetPoint.position - this.transform.position;
+            Quaternion rotationTarget = Quaternion.LookRotation(fireDirection);
+            laser.transform.rotation = rotationTarget;
+        }
     }
 }
