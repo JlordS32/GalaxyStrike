@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other) {
-        Debug.Log($"Collision with {other.name}");
+    [SerializeField] private GameObject _explosionPrefab;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Instantiate(_explosionPrefab, this.transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
     }
 }
