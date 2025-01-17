@@ -44,7 +44,7 @@ public class PlayerWeapon : MonoBehaviour
 
     private void MoveTargetPoint()
     {
-        Vector3 targetPosition = new(Input.mousePosition.x, Input.mousePosition.y, _targetDistance);
+        Vector3 targetPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, _targetDistance);
         _targetPoint.position = Camera.main.ScreenToWorldPoint(targetPosition);
     }
 
