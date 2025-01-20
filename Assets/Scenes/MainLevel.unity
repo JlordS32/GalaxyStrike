@@ -1190,7 +1190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6055083016908894cbe14ef6cdefbfd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreboardText: {fileID: 0}
+  _scoreboardText: {fileID: 1608438105}
 --- !u!1001 &669389004
 PrefabInstance:
   m_ObjectHideFlags: 0
